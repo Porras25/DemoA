@@ -1,0 +1,193 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://id-ios-android.appspot.com/_ah/api",
+  "name" : "frutaendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://id-ios-android.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "enpoints.com",
+  "ownerName" : "enpoints.com",
+  "methods" : {
+    "frutaendpoint.updateFruta" : {
+      "path" : "fruta",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.enpoints.FrutaEndpoint.updateFruta",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "frutaendpoint.getFruta" : {
+      "path" : "fruta/{nombre}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.enpoints.FrutaEndpoint.getFruta",
+      "request" : {
+        "parameters" : {
+          "nombre" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "frutaendpoint.listFruta" : {
+      "path" : "fruta",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.enpoints.FrutaEndpoint.listFruta",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "frutaendpoint.insertFruta" : {
+      "path" : "fruta",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.enpoints.FrutaEndpoint.insertFruta",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "frutaendpoint.removeFruta" : {
+      "path" : "fruta/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.enpoints.FrutaEndpoint.removeFruta",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Fruta" : {
+        "id" : "Fruta",
+        "type" : "object",
+        "properties" : {
+          "descripcion" : {
+            "type" : "string"
+          },
+          "nombre" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_Fruta" : {
+        "id" : "CollectionResponse_Fruta",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Fruta"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.enpoints.FrutaEndpoint.updateFruta" : {
+        "request" : {
+          "$ref" : "Fruta"
+        },
+        "response" : {
+          "$ref" : "Fruta"
+        }
+      },
+      "com.enpoints.FrutaEndpoint.getFruta" : {
+        "response" : {
+          "$ref" : "Fruta"
+        }
+      },
+      "com.enpoints.FrutaEndpoint.listFruta" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Fruta"
+        }
+      },
+      "com.enpoints.FrutaEndpoint.insertFruta" : {
+        "request" : {
+          "$ref" : "Fruta"
+        },
+        "response" : {
+          "$ref" : "Fruta"
+        }
+      },
+      "com.enpoints.FrutaEndpoint.removeFruta" : {
+      }
+    }
+  }
+}
