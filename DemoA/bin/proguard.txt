@@ -1,0 +1,12 @@
+# view AndroidManifest.xml #generated:21
+-keep class com.demoa.GCMIntentService { <init>(...); }
+
+# view AndroidManifest.xml #generated:14
+-keep class com.demoa.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class com.demoa.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:22
+-keep class com.google.android.gcm.GCMBroadcastReceiver { <init>(...); }
+
